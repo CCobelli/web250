@@ -18,16 +18,6 @@
     echo '<p>The song of the ' . $fly_catcher->name . ' on breeding grounds is "' . $fly_catcher->song . '".</p>';
 
     $kiwi = new Kiwi;
-<<<<<<< HEAD
-    $kiwi->flying = "no";
-    echo "<p>The " . $fly_catcher->name . " " . $fly_catcher->can_fly() . ".</p>";
-    echo "<p>The " . $kiwi->name . " " . $kiwi->can_fly() . ".</p>";    
-
-?>
-    </body>
-</html>
-
-=======
     echo "<p>The " . $fly_catcher->name . " " . $fly_catcher->can_fly() . ".</p>";
     echo "<p>The " . $kiwi->name . " " . $kiwi->can_fly() . ".</p>";    
 
@@ -47,4 +37,3 @@
 ?>
     </body>
 </html>
->>>>>>> dev
