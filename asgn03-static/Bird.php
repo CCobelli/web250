@@ -36,13 +36,3 @@ class Kiwi extends Bird {
     protected static $flying = "no";
 }
 
-echo 'Birds: ' . Bird::$instance_count . "<br />";
-
-$bird1 = Bird::create();
-
-echo 'Birds: ' . Bird::$instance_count . "<br />";
-
-echo "This bird " . YellowBelliedFlyCatcher::can_fly() . "<br />";
-echo "This bird " . Kiwi::can_fly() . "<br />";
-
-echo YellowBelliedFlyCatcher::$egg_num;
