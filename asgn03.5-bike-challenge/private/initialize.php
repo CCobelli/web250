@@ -26,6 +26,20 @@
   
   // Load class definitions manually
 
+  // -> individually
+  //require_once('classes/bicycles.class.php');
+
+  // ->All Classes in dir
+  foreach(glob('classes/*.class.php') as $file) {
+    require_once($file);
+  }
+
   // Autoload class definitions
+  function my_autoload($class) {
+    if(preg_match('/\A\w+\Z/', $class)) {
+      include('classes/' . $class . '.class.php');
+    }
+  }
+  spl_autoload_register('my_autoload');
 
 ?>
