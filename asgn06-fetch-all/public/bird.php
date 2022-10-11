@@ -23,13 +23,11 @@
 
       <?php 
 
-      $parser = new ParseCSV(PRIVATE_PATH . '/wnc-birds.csv');
-      $bird_array = $parser->parse();
+      $birds = Bird::find_all();
 
       ?>
 
-      <?php foreach($bird_array as $args) { ?>
-        <?php $bird = new Bird($args); ?>
+      <?php foreach($birds as $bird) { ?>
       <tr>
         <td><?php echo h($bird->name); ?></td>
         <td><?php echo h($bird->habitat); ?></td>
@@ -43,16 +41,9 @@
 
     </table>
 
-    <?php 
-    $sql = "SELECT * FROM birds";
-    $result = $database->query($sql);
-    $row = $result->fetch_assoc();
-    $result->free();
-
-    echo "NAME: " . $row['common_name'];
-    ?>
-
   </div>
 
 </div>
+
+<?php include(SHARED_PATH . '/public_footer.php'); ?>
 
