@@ -43,6 +43,8 @@ function is_get_request() {
   return $_SERVER['REQUEST_METHOD'] == 'GET';
 }
 
+<<<<<<< HEAD
+=======
 // PHP on Windows does not have a money_format() function.
 // This is a super-simple replacement.
 if(!function_exists('money_format')) {
@@ -51,4 +53,5 @@ if(!function_exists('money_format')) {
   }
 }
 
+>>>>>>> dev
 ?>

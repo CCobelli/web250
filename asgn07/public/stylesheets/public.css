@@ -131,6 +131,8 @@ table#inventory tr td, table#inventory tr th {
   border: 1px solid #000;
   padding: 3px;
 }
+<<<<<<< HEAD
+=======
 
 .detail dl {
   clear: both;
@@ -146,3 +148,4 @@ table#inventory tr td, table#inventory tr th {
 .detail dl dd {
   float: left;
 }
+>>>>>>> dev
