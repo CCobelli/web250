@@ -7,9 +7,28 @@
 
   <div id="page" class="narrow">
     <h2>About Us</h2>
+<<<<<<< HEAD
     <p>We like birds!</p>
+=======
+<<<<<<< HEAD
+    <p>We like birds!</p>
+=======
+    <p>Chain Gang was started in 2005 by a group of bicycle loving friends. We wanted to create a neighborhood bike shop that could also deliver top-quality bicycles to your doorstep. Now with six locations around the city, we are able to reach even more neighborhoods.</p>
+    <p>Our mechanics inspect every bicycle from top to bottom before it leaves our shop. If you have questions, our expert staff has the knowledge and experience to advise you and to meet all of your cycling needs.</p>
+>>>>>>> dev
+>>>>>>> dev
   </div>
   
 </div>
 
+<<<<<<< HEAD
 <?php $super_hero_image = 'littleredfella.jpg'; ?>
+=======
+<<<<<<< HEAD
+<?php $super_hero_image = 'littleredfella.jpg'; ?>
+=======
+<?php $super_hero_image = 'AdobeStock_50633008_xlarge.jpeg'; ?>
+
+<?php include(SHARED_PATH . '/public_footer.php'); ?>
+>>>>>>> dev
+>>>>>>> dev

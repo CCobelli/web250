@@ -131,3 +131,24 @@ table#inventory tr td, table#inventory tr th {
   border: 1px solid #000;
   padding: 3px;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+.detail dl {
+  clear: both;
+  height: 1em;
+  margin-bottom: 1em;
+}
+
+.detail dl dt {
+  float: left;
+  width: 100px;
+  font-weight: bold;
+}
+.detail dl dd {
+  float: left;
+}
+>>>>>>> dev
+>>>>>>> dev
