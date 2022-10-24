@@ -7,62 +7,26 @@
   $id = $_GET['id'] ?? false;
 
   if(!$id) {
-<<<<<<< HEAD
-    redirect_to('bird.php');
-=======
     redirect_to('bicycles.php');
->>>>>>> dev
   }
 
   // Find bicycle using ID
 
-<<<<<<< HEAD
-  $bird = Bird::find_by_id($id);
-
-?>
-
-<?php $page_title = 'Detail: ' . $bird->name(); ?>
-=======
   $bike = Bicycle::find_by_id($id);
 
 ?>
 
 <?php $page_title = 'Detail: ' . $bike->name(); ?>
->>>>>>> dev
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="main">
 
-<<<<<<< HEAD
-  <a href="bird.php">Back to Inventory</a>
-=======
   <a href="bicycles.php">Back to Inventory</a>
->>>>>>> dev
 
   <div id="page">
 
     <div class="detail">
       <dl>
-<<<<<<< HEAD
-        <dt>Name</dt>
-        <dd><?php echo h($bird->name); ?></dd>
-      </dl>
-      <dl>
-        <dt>Habitat</dt>
-        <dd><?php echo h($bird->habitat); ?></dd>
-      </dl>
-      <dl>
-        <dt>Food</dt>
-        <dd><?php echo h($bird->food); ?></dd>
-      </dl>
-      <dl>
-        <dt>Conservation</dt>
-        <dd><?php echo h($bird->conservation()); ?></dd>
-      </dl>
-      <dl>
-        <dt>Backyard Tips</dt>
-        <dd><?php echo h($bird->backyardTips); ?></dd>
-=======
         <dt>Brand</dt>
         <dd><?php echo h($bike->brand); ?></dd>
       </dl>
@@ -101,7 +65,6 @@
       <dl>
         <dt>Description</dt>
         <dd><?php echo h($bike->description); ?></dd>
->>>>>>> dev
       </dl>
     </div>
 

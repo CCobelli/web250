@@ -3,7 +3,7 @@
 class Bicycle extends DatabaseObject {
 
   static protected $table_name = 'bicycles';
-  
+  static protected $db_columns = ['id', 'brand', 'model', 'year', 'category', 'color', 'gender', 'price', 'weight_kg', 'condition_id', 'description'];
 
   public $id;
   public $brand;
@@ -82,10 +82,10 @@ class Bicycle extends DatabaseObject {
     $this->errors = [];
 
     if(is_blank($this->brand)) {
-      $this->errors[] = "Brand cannot be blank";
+      $this->errors[] = "Brand cannot be blank.";
     }
     if(is_blank($this->model)) {
-      $this->errors[] = "Model cannot be blank";
+      $this->errors[] = "Model cannot be blank.";
     }
     return $this->errors;
   }

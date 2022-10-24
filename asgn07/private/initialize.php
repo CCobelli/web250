@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
-=======
 
->>>>>>> dev
   ob_start(); // turn on output buffering
 
   // session_start(); // turn on sessions if needed
@@ -21,27 +18,12 @@
   // * Can set a hardcoded value:
   // define("WWW_ROOT", '/~kevinskoglund/chain_gang/public');
   // define("WWW_ROOT", '');
-<<<<<<< HEAD
-  // * Can dynamically find everything in URL up to "/public"ready
-=======
   // * Can dynamically find everything in URL up to "/public"
->>>>>>> dev
   $public_end = strpos($_SERVER['SCRIPT_NAME'], '/public') + 7;
   $doc_root = substr($_SERVER['SCRIPT_NAME'], 0, $public_end);
   define("WWW_ROOT", $doc_root);
 
   require_once('functions.php');
-<<<<<<< HEAD
-  require_once('db_credentials.php');
-  require_once('database_functions.php');
-  
-  // Load class definitions manually
-
-  // -> individually
-  //require_once('classes/bicycles.class.php');
-
-  // ->All Classes in dir
-=======
   require_once('status_error_functions.php');
   require_once('db_credentials.php');
   require_once('database_functions.php');
@@ -53,7 +35,6 @@
   // require_once('classes/bicycle.class.php');
 
   // -> All classes in directory
->>>>>>> dev
   foreach(glob('classes/*.class.php') as $file) {
     require_once($file);
   }
@@ -66,13 +47,7 @@
   }
   spl_autoload_register('my_autoload');
 
-<<<<<<< HEAD
-
-  $database = db_connect();
-  Bird::set_database($database);
-=======
   $database = db_connect();
   DatabaseObject::set_database($database);
 
->>>>>>> dev
 ?>

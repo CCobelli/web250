@@ -9,7 +9,6 @@ if(is_post_request()) {
   $bicycle = new Bicycle($args);
   $result = $bicycle->save();
 
-  $result = false;
   if($result === true) {
     $new_id = $bicycle->id;
     $_SESSION['message'] = 'The bicycle was created successfully.';

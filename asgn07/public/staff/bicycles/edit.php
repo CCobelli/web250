@@ -28,7 +28,7 @@ if(is_post_request()) {
 } else {
 
   // display the form
- 
+
 }
 
 ?>
@@ -48,7 +48,7 @@ if(is_post_request()) {
     <form action="<?php echo url_for('/staff/bicycles/edit.php?id=' . h(u($id))); ?>" method="post">
 
       <?php include('form_fields.php'); ?>
-      
+
       <div id="operations">
         <input type="submit" value="Edit Bicycle" />
       </div>

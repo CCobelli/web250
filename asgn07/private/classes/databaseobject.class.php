@@ -1,7 +1,6 @@
-<?php 
+<?php
 
 class DatabaseObject {
-  static protected $db_columns = ['id', 'brand', 'model', 'year', 'category', 'color', 'gender', 'price', 'weight_kg', 'condition_id', 'description'];
 
   static protected $database;
   static protected $table_name = "";
@@ -30,7 +29,7 @@ class DatabaseObject {
   }
 
   static public function find_all() {
-    $sql = "SELECT * FROM " . static::$table_name . " ";
+    $sql = "SELECT * FROM " . static::$table_name;
     return static::find_by_sql($sql);
   }
 
@@ -60,7 +59,9 @@ class DatabaseObject {
   protected function validate() {
     $this->errors = [];
 
-    return $this-> errors;
+    // Add custom validations
+
+    return $this->errors;
   }
 
   protected function create() {
@@ -69,7 +70,7 @@ class DatabaseObject {
 
     $attributes = $this->sanitized_attributes();
     $sql = "INSERT INTO " . static::$table_name . " (";
-    $sql .= join(', ', array_keys($attributes));;
+    $sql .= join(', ', array_keys($attributes));
     $sql .= ") VALUES ('";
     $sql .= join("', '", array_values($attributes));
     $sql .= "')";
@@ -99,6 +100,7 @@ class DatabaseObject {
   }
 
   public function save() {
+    // A new record will not have an ID yet
     if(isset($this->id)) {
       return $this->update();
     } else {
@@ -114,6 +116,7 @@ class DatabaseObject {
     }
   }
 
+  // Properties which have database columns, excluding ID
   public function attributes() {
     $attributes = [];
     foreach(static::$db_columns as $column) {
@@ -137,7 +140,15 @@ class DatabaseObject {
     $sql .= "LIMIT 1";
     $result = self::$database->query($sql);
     return $result;
+
+    // After deleting, the instance of the object will still
+    // exist, even though the database record does not.
+    // This can be useful, as in:
+    //   echo $user->first_name . " was deleted.";
+    // but, for example, we can't call $user->update() after
+    // calling $user->delete().
   }
+
 }
 
 ?>
