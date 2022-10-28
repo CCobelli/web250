@@ -1,6 +1,4 @@
 <?php
-// prevents this code from being loaded directly in the browser
-// or without first setting the necessary object
 if(!isset($bicycle)) {
   redirect_to(url_for('/staff/bicycles/index.php'));
 }
