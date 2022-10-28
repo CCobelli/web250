@@ -2,7 +2,6 @@
 
 <?php
   
-// Find all bicycles;
 $bicycles = Bicycle::find_all();
   
 ?>

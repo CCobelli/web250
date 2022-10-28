@@ -12,8 +12,6 @@ if($bicycle == false) {
 }
 
 if(is_post_request()) {
-
-  // Save record using post parameters
   $args = $_POST['bicycle'];
   $bicycle->merge_attributes($args);
   $result = $bicycle->save();
@@ -22,12 +20,9 @@ if(is_post_request()) {
     $_SESSION['message'] = 'The bicycle was updated successfully.';
     redirect_to(url_for('/staff/bicycles/show.php?id=' . $id));
   } else {
-    // show errors
   }
 
 } else {
-
-  // display the form
 
 }
 

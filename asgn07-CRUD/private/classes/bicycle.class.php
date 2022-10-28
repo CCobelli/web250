@@ -30,7 +30,6 @@ class Bicycle extends DatabaseObject {
   ];
 
   public function __construct($args=[]) {
-    //$this->brand = isset($args['brand']) ? $args['brand'] : '';
     $this->brand = $args['brand'] ?? '';
     $this->model = $args['model'] ?? '';
     $this->year = $args['year'] ?? '';
@@ -41,13 +40,6 @@ class Bicycle extends DatabaseObject {
     $this->price = $args['price'] ?? 0;
     $this->weight_kg = $args['weight_kg'] ?? 0.0;
     $this->condition_id = $args['condition_id'] ?? 3;
-
-    // Caution: allows private/protected properties to be set
-    // foreach($args as $k => $v) {
-    //   if(property_exists($this, $k)) {
-    //     $this->$k = $v;
-    //   }
-    // }
   }
 
   public function name() {

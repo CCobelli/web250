@@ -32,8 +32,7 @@ class ParseCSV {
       echo "File not set.";
       return false;
     }
-
-    // clear any previous results
+    
     $this->reset();
 
     $file = fopen($this->filename, 'r');

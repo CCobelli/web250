@@ -2,6 +2,8 @@
 
 class DatabaseObject {
 
+  static protected $db_columns = ['id', 'brand', 'model', 'year', 'category', 'color', 'gender', 'price', 'weight_kg', 'condition_id', 'description'];
+
   static protected $database;
   static protected $table_name = "";
   static protected $columns = [];
@@ -17,7 +19,6 @@ class DatabaseObject {
       exit("Database query failed.");
     }
 
-    // results into objects
     $object_array = [];
     while($record = $result->fetch_assoc()) {
       $object_array[] = static::instantiate($record);
@@ -46,8 +47,6 @@ class DatabaseObject {
 
   static protected function instantiate($record) {
     $object = new static;
-    // Could manually assign values to properties
-    // but automatically assignment is easier and re-usable
     foreach($record as $property => $value) {
       if(property_exists($object, $property)) {
         $object->$property = $value;
@@ -58,8 +57,6 @@ class DatabaseObject {
 
   protected function validate() {
     $this->errors = [];
-
-    // Add custom validations
 
     return $this->errors;
   }
@@ -100,7 +97,6 @@ class DatabaseObject {
   }
 
   public function save() {
-    // A new record will not have an ID yet
     if(isset($this->id)) {
       return $this->update();
     } else {
@@ -116,7 +112,6 @@ class DatabaseObject {
     }
   }
 
-  // Properties which have database columns, excluding ID
   public function attributes() {
     $attributes = [];
     foreach(static::$db_columns as $column) {
@@ -141,12 +136,6 @@ class DatabaseObject {
     $result = self::$database->query($sql);
     return $result;
 
-    // After deleting, the instance of the object will still
-    // exist, even though the database record does not.
-    // This can be useful, as in:
-    //   echo $user->first_name . " was deleted.";
-    // but, for example, we can't call $user->update() after
-    // calling $user->delete().
   }
 
 }
