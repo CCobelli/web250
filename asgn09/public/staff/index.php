@@ -8,6 +8,7 @@
     <h2>Main Menu</h2>
     <ul>
       <li><a href="<?php echo url_for('/staff/birds/index.php'); ?>">Birds</a></li>
+      <li><a href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a></li>
     </ul>
   </div>
 
