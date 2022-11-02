@@ -29,15 +29,18 @@ class User extends DatabaseObject {
     return $this->first_name . " " . $this->last_name;
   }
 
+/** * Hashes users set password */
   protected function set_hashed_password() {
     $this->hashed_password = password_hash($this->password, PASSWORD_BCRYPT);
   }
 
+  /** * Hashes Password automatically when creating new user   */
   protected function create(){
     $this->set_hashed_password();
     return parent::create();
   }
 
+  /** Hashes updated password automatically when updating a user */
   protected function update() {
     if($this->password != '') {
       $this->set_hashed_password();
